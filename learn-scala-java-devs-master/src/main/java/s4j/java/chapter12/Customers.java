@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2015-2017 Toby Weston
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package s4j.java.chapter12;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+@SuppressWarnings("all")
+public class Customers implements Sortable<Customer> {
+
+	private final Set<Customer> customers = new HashSet<>();
+
+	public void add(Customer customer) {
+		customers.add(customer);
+	}
+
+	@Override
+	public Iterator<Customer> iterator() {
+		return customers.iterator();
+	}
+}
